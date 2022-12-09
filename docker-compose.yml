@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+ 
+ db:
+   image: mysql:5.7
+   environment:
+     MYSQL_ROOT_PASSWORD: "root123456"
+     MYSQL_DATABASE: "mydb"
+   ports:
+     - "3306:3306"
+
+   volumes:
+     - /data/mysql_desaf:/var/lib/mysql
+
+   networks:
+     - rede-local-app
+
+
+
+ phpmyadmin:
+   image: phpmyadmin/phpmyadmin
+   environment:
+     MYSQL_ROOT_PASSWORD: "root123456"
+   ports:
+     - "8080:80"
+   volumes:
+     - /data/php/admin/uploads.ini:/usr/local/etc/php/conf.d/php-phpmyadmin.ini
+   networks:
+     - rede-local-app
+
+
+networks:
+   rede-local-app:
+     driver: bridge

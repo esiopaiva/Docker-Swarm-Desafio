@@ -17,7 +17,6 @@ services:
      - rede-local-app
 
 
-
  phpmyadmin:
    image: phpmyadmin/phpmyadmin
    environment:
@@ -28,7 +27,6 @@ services:
      - /data/php/admin/uploads.ini:/usr/local/etc/php/conf.d/php-phpmyadmin.ini
    networks:
      - rede-local-app
-
 
 networks:
    rede-local-app:

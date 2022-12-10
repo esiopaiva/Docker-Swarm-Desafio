@@ -26,8 +26,10 @@ Vagrant.configure("2") do |config|
 
       if "#{name}" == "master"
         machine.vm.provision "shell", path: "master.sh"
+        
       else
         machine.vm.provision "shell", path: "worker.sh"
+        machine.vm.provision "shell", path: "worker_app.sh"
       end
     end
   end

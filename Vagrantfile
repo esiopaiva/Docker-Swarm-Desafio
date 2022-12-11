@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
         
       else
         machine.vm.provision "shell", path: "worker.sh"
-        machine.vm.provision "shell", path: "worker_app.sh"
+       # machine.vm.provision "shell", path: "worker_app.sh"
       end
     end
   end

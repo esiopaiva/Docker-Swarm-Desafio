@@ -11,7 +11,7 @@ services:
      - "3306:3306"
 
    volumes:
-     - /data/mysql_desaf:/var/lib/mysql
+     - /vagrant/mysql_desaf/init.sql:/docker-entrypoint-initdb.d/init.sql
 
    networks:
      - rede-local-app
@@ -24,7 +24,7 @@ services:
    ports:
      - "8080:80"
    volumes:
-     - /data/php/admin/uploads.ini:/usr/local/etc/php/conf.d/php-phpmyadmin.ini
+     - /vagrant/php/uploads.ini:/usr/local/etc/php/conf.d/php-phpmyadmin.ini
    networks:
      - rede-local-app
 
